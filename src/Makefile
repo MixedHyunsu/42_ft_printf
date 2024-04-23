@@ -28,7 +28,3 @@ re:
 
 %.o: %.c
 	$Q$(CC) $(CFLAGS) -c $< -o $@ -MMD
-
-# 프로젝트마다 필요한 것들. 그냥 예시
-#SRCS_BASIC := $(filter-out $(filter %_bonus.c,$(SRCS)), $(SRCS))
-# ...후략
