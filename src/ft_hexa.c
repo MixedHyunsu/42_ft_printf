@@ -1,11 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_hexa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunski2 <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/23 19:56:37 by hyunski2          #+#    #+#             */
+/*   Updated: 2024/04/23 19:56:38 by hyunski2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int ft_nbrlen(unsigned int x)
+static int	ft_nbrlen(unsigned int x)
 {
 	int	len;
 
 	len = 0;
+	if (x == 0)
+		return (1);
 	while (x > 0)
 	{
 		x /= 16;
@@ -32,13 +45,13 @@ static void	ft_printhexa(unsigned int x, const char Xx)
 	}
 }
 
-int	ft_hexa(unsigned int x, const char *format)
+int	ft_hexa(unsigned long x, const char *format)
 {
 	int		len;
-	char	Xx;
+	char	xx;
 
 	len = ft_nbrlen(x);
-	Xx = *format;
-	ft_printhexa(x, Xx);
+	xx = *format;
+	ft_printhexa(x, xx);
 	return (len);
 }

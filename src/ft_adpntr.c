@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_adpntr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hyunski2 <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/04/23 19:56:11 by hyunski2          #+#    #+#             */
+/*   Updated: 2024/04/23 19:56:14 by hyunski2         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "ft_printf.h"
 
@@ -17,11 +28,13 @@ static void	ft_statichexa(unsigned long x)
 	}
 }
 
-static int ft_nbrlen(unsigned long x)
+static int	ft_nbrlen(unsigned long x)
 {
 	int	len;
 
 	len = 0;
+	if (x == 0)
+		return (1);
 	while (x > 0)
 	{
 		x /= 16;
